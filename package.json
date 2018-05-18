@@ -1,7 +1,7 @@
 {
     "name": "z-nomp",
-    "version": "0.0.4",
-    "description": "ZenCash (Equihash) stratum mining pool based on NOMP",
+    "version": "0.0.5",
+    "description": "BitcoinZ (Zhash) stratum mining pool based on NOMP",
     "keywords": [
         "stratum",
         "mining",
@@ -10,7 +10,8 @@
         "poolserver",
         "zclassic",
         "zcash",
-        "equihash"
+        "equihash",
+        "BitcoinZ"
     ],
     "homepage": "https://github.com/zencashio/z-nomp",
     "bugs": {
@@ -23,7 +24,8 @@
         "sennevb",
         "Matthew Little",
         "vekexasia",
-        "TheSeven"
+        "TheSeven",
+        "Nicholas Hill"
     ],
     "main": "init.js",
     "bin": {
@@ -49,7 +51,7 @@
         "nonce": "1.0.4",
         "redis": "2.7.1",
         "request": "2.81.0",
-        "stratum-pool": "git+https://github.com/z-classic/node-stratum-pool.git"
+        "stratum-pool": "git+https://github.com/NickRHill/node-stratum-pool.git"
     },
     "engines": {
         "node": ">=0.10"
