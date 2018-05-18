@@ -1,0 +1,7 @@
+{
+    "name": "bztest",
+    "symbol": "tzb",
+    "algorithm": "equihash",
+    "requireShielding": true,
+    "txfee": 0.0001
+}
