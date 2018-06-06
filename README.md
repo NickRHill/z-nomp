@@ -59,7 +59,7 @@ sudo apt-get install build-essential libsodium-dev npm
 sudo npm install n -g
 sudo n stable
 git clone https://github.com/joshuayabut/node-open-mining-portal.git z-nomp
-cd z-nomp
+cd zh-nomp
 npm update
 npm install
 ```
