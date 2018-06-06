@@ -1,15 +1,10 @@
-# Zcash® and Zclassic - Node Open Mining Portal
+# BitcoinZ - ZHash Node Open Mining Portal
 
-**[Click here for the official - Zcash® and Zclassic Stratum Mining Pool Installation Guide](https://zdeveloper.org/wiki:z-nomp_install)**
 
-This is a Equihash mining pool based off of Node Open Mining Portal.
-
-Donations for development are greatly appreciated!
-  * BTC: 18vHMxVzotQ9EPyESrf7Z1hNM9AwJeVHgD
-  * ZCL: zcXDWbgReztLLXSTUMT2nEumiDM6zTzUXFb7vUnx9JNfJDVqbodyxwEQwgDkFw7Dp128tBU8n8rmVxT43DshmeTEM4LHcdz
+This is a ZHash mining pool based off of Z-NOMP
 
 #### Production Usage Notice
-This is beta software. All of the following are things that can change and break an existing Z-NOMP setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data. *Only tagged releases are considered stable.*
+This is beta software. All of the following are things that can change and break an existing ZH-NOMP setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data. *Only tagged releases are considered stable.*
 
 #### Paid Solution
 Usage of this software requires abilities with sysadmin, database admin, coin daemons, and sometimes a bit of programming. Running a production pool can literally be more work than a full-time job. 
@@ -19,30 +14,12 @@ Usage of this software requires abilities with sysadmin, database admin, coin da
 IRC
 * Support / general discussion join: https://gitter.im/zclassicorg/z-nomp
 
-If your pool uses Z-NOMP let us know and we will list your website here.
-
-### Some pools using Z-NOMP or node-stratum-module:
-
-https://pool.cryptobroker.io/zcl Running MPOS and 0.5% of the fee goes to the Zclassic donation fund! 200+ blocks have been found as well! 
-
-http://luckpool.org Zcash Pool with Custom Frontend w/Miner's Jackpot
-
-http://zclmine.com/ Custom frontend
-
-http://zclassic.miningspeed.com Custom frontend and 0% fee
-
-https://zpool.it 0.5% fee
-
-http://miningpool.io/
-
-https://lucky-mining.com.ua/ Running MPOS and no fee, [vot][zcl][zen][hush][btg].lucky-mining.com.ua <-- Ukraine
 
 Usage
 =====
 
-
 #### Requirements
-* Coin daemon(s) (find the coin's repo and build latest version from source)
+* Coin daemon. You will need BitcoinZ daemon 1.2.0 or later, and operate ZH-Nomp after block 160,000 is reached (find the coin's repo and build latest version from source)[BitcoinZ](https://github.com/btcz/bitcoinz)
 * [Node.js](http://nodejs.org/) v7+ ([follow these installation instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager))
 * [Redis](http://redis.io/) key-value store v2.6+ ([follow these instructions](http://redis.io/topics/quickstart))
 
@@ -59,9 +36,8 @@ you are using - a good place to start with redis is [data persistence](http://re
 Follow the build/install instructions for your coin daemon. Your coin.conf file should end up looking something like this:
 ```
 daemon=1
-rpcuser=zclassicrpc
+rpcuser=BitcoinZRPCuser
 rpcpassword=securepassword
-rpcport=8232
 ```
 For redundancy, its recommended to have at least two daemon instances running in case one drops out-of-sync or offline,
 all instances will be polled for block/transaction updates and be used for submitting blocks. Creating a backup daemon
@@ -107,9 +83,9 @@ ie: Miner 1 mines at 0.1 difficulty and finds 10 shares, the pool sees it as 1 s
 ```
 node [path to cli.js] [coin name in config] [block hash symbol]
 ```
-Example: inside `zclassic.conf` add the line
+Example: inside `bitcoinz.conf` add the line
 ```
-blocknotify=node /home/user/z-nomp/scripts/cli.js blocknotify zclassic %s
+blocknotify=node /home/user/z-nomp/scripts/cli.js blocknotify bitcoinz %s
 ```
 
 Alternatively, you can use a more efficient block notify script written in pure C. Build and usage instructions
@@ -132,8 +108,8 @@ output from Z-NOMP.
 * Use [New Relic](http://newrelic.com/) to monitor your Z-NOMP instance and server performance.
 
 
-#### Upgrading Z-NOMP
-When updating Z-NOMP to the latest code its important to not only `git pull` the latest from this repo, but to also update
+#### Upgrading ZH-NOMP
+When updating ZH-NOMP to the latest code its important to not only `git pull` the latest from this repo, but to also update
 the `node-stratum-pool` and `node-multi-hashing` modules, and any config files that may have been changed.
 * Inside your Z-NOMP directory (where the init.js script is) do `git pull` to get the latest Z-NOMP code.
 * Remove the dependenices by deleting the `node_modules` directory with `rm -r node_modules`.
@@ -143,6 +119,9 @@ the `node-stratum-pool` and `node-multi-hashing` modules, and any config files t
 
 Credits
 -------
+### ZH-NOMP
+* [Nicholas Hill](https://github.com/NickRHill)
+
 ### Z-NOMP
 * [Joshua Yabut / movrcx](https://github.com/joshuayabut)
 * [Aayan L / anarch3](https://github.com/aayanl)
