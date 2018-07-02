@@ -55,7 +55,7 @@ a good pool operator. For starters be sure to read:
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-sudo apt-get install build-essential libsodium-dev npm
+sudo apt-get install build-essential libsodium-dev npm libboost-dev libboost-system-dev
 sudo npm install n -g
 sudo n stable
 git clone https://github.com/NickRHill/zh-nomp.git
